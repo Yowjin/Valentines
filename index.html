@@ -30,10 +30,7 @@
             <button id="noButton">No</button>
         </div>
     </div>
-    
-    
-    
-    
+
     <script>
         const envelope = document.querySelector('.envelope-wrapper');
         const buttonGroup = document.getElementById('buttonGroup');
@@ -42,16 +39,34 @@
         envelope.classList.toggle('flap');
         buttonGroup.style.display = 'block';
     });
-
     document.getElementById('yesButton').addEventListener('click', function() {
-        alert("Mamamatay ako sa kilig");
-        });
+        const gifContainer = document.createElement('div');
+        gifContainer.classList.add('gif-container');
 
+        
+        const message = document.createElement('p');
+        message.textContent = "Kinikilig akoooo 💖";
+        gifContainer.appendChild(message);
+
+        
+        const gif = document.createElement('img');
+        gif.src = 'gif/kilig.gif'; 
+        gif.alt = 'Kilig GIF';
+        gifContainer.appendChild(gif);
+
+        
+        document.body.appendChild(gifContainer);
+
+        message.style.position = 'absolute';
+        message.style.top = '100%';
+        message.style.left = '60px';
+        message.style.transform = 'translateY(-50%)';
+        message.style.color = 'white'
+    });
 
     document.getElementById('noButton').addEventListener('click', function() {
         alert("Bawi next life!");
     });
-
     </script>
 </body>
 </html>
