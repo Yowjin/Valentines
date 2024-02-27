@@ -2,71 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letter</title>
     <link rel="stylesheet" href="style.css">
+    <title>xox</title>
 </head>
 <body>
     <div class="container">
-        <div class="envelope-wrapper">
-            <div class="envelope">
-                <div class="letter">
-                    <div class="text">
-                        <strong>Hi Rizalyn</strong>
-                        <p>
-                            Happy Valentine's Day.
-                            I want this to be short and simple. I've been admiring you since the day I talked to you, and as time goes by, 
-                            I've felt something that I can't explain, but it keeps me thinking about you.
-                            Additionally, I wanted to ask you, kung pwede ba mangligaw?
-                        </p>
-                    </div>
-                </div>
+        <div class="board-container">
+            <div class="board" id="board">
+                
             </div>
-            <div class="heart"></div>
+            <div id="status" class="status">Player X's turn</div>
+            <button onclick="resetGame()">Reset Game</button>
         </div>
-        <div class="button-group" id="buttonGroup">
-            <button id="yesButton">Yes</button>
-            <button id="noButton">No</button>
+        <div id="scoreboard" class="scoreboard">
+            <p>Player X: <span id="scoreX">0</span></p>
+            <p>Player O: <span id="scoreO">0</span></p>
+            <button onclick="resetScores()">Reset Scores</button>
         </div>
     </div>
-
-    <script>
-        const envelope = document.querySelector('.envelope-wrapper');
-        const buttonGroup = document.getElementById('buttonGroup');
-
-    envelope.addEventListener('click', () => {
-        envelope.classList.toggle('flap');
-        buttonGroup.style.display = 'block';
-    });
-    document.getElementById('yesButton').addEventListener('click', function() {
-        const gifContainer = document.createElement('div');
-        gifContainer.classList.add('gif-container');
-
-        
-        const message = document.createElement('p');
-        message.textContent = "Kinikilig akoooo 💖";
-        gifContainer.appendChild(message);
-
-        
-        const gif = document.createElement('img');
-        gif.src = 'gif/kilig.gif'; 
-        gif.alt = 'Kilig GIF';
-        gifContainer.appendChild(gif);
-
-        
-        document.body.appendChild(gifContainer);
-
-        message.style.position = 'absolute';
-        message.style.top = '100%';
-        message.style.left = '60px';
-        message.style.transform = 'translateY(-50%)';
-        message.style.color = 'white'
-    });
-
-    document.getElementById('noButton').addEventListener('click', function() {
-        alert("Bawi next life!");
-    });
-    </script>
+    <script src="js.js"></script>
 </body>
 </html>
